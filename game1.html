@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Number guess game</title>
+    </head>
+    <body>
+        <script>
+            let x = parseInt(Math.random()*100);
+            let count=0;
+            let guess;
+            do {
+              guess = parseInt(prompt("Guess number between 0-100"));
+               if(guess<x){
+                 alert("Higher number please!!");
+               }
+               else if(guess>x){
+                 alert("Lower number please!!")
+               }
+               else{
+                 alert("You have guessed it in " +count+" attempts!!");
+               }
+               count++;
+            }while(guess!=x);
+          </script>
+    </body>
+</html>
