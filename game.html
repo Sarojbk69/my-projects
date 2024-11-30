@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: whitesmoke;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            color: ghostwhite;
+            background-color: firebrick;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: darkred;
+            transform: scale(1.1);
+        }
+
+        .btn:active {
+            background-color: crimson;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess The Number</h1>
+    <button type="button" onclick="guessnum()" class="btn">Click Me</button>
+</body>
+<script>
+    function guessnum(){
+        var num = Math.floor(Math.random() * 100) + 1;
+        var guess = prompt("Enter a number:");
+        var count = 0;
+        while(guess!=num){
+            if(guess>num){
+                guess = prompt("Enter a lower number:");
+            }else if (guess<num){
+                guess = prompt("Enter a higher number:");
+            }
+            count++;
+        }
+        alert("Congo!,You guessed the number "+num+" in "+count+" attemps");
+    }
+</script>
+</html>
